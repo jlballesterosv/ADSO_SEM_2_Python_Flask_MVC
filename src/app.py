@@ -17,12 +17,5 @@ def crear_producto():
 def ver_productos():
     return render_template('tabla_productos.html', titulo_pagina = 'Ver Productos')
 
-class Productos:
-    descripcion = 'Carne'
-    valor_unitario = 1000
-    cantidad_stock = 10
-    unidad_medida = 'GRS'
-    
-    def crear_producto(descripcion, valor_unitario, cantidad_stock, unidad_medida):
-        return 'Producto creado correctamente'
+
     
