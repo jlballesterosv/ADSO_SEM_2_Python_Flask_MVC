@@ -1,6 +1,12 @@
 from flask import Flask, render_template
+from src.models import Base, engine
 
 app = Flask(__name__)
+
+app.secret_key = "mi llaveria"
+app.debug = True
+
+Base.metadata.create_all(engine)
 
 if __name__ == '__main__':
     app.run(debug=True)
