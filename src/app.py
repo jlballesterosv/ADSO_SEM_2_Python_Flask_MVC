@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from src.models import Base, engine
+from src.models.productos import Productos
 
 app = Flask(__name__)
 
@@ -21,6 +22,7 @@ def crear_producto():
 
 @app.route('/ver_productos')
 def ver_productos():
+    productos = Productos.obtener_todos()
     return render_template('tabla_productos.html', titulo_pagina = 'Ver Productos')
 
 

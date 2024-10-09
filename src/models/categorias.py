@@ -1,12 +1,12 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey
+from sqlalchemy import Column, Integer, String
 from src.models import session, Base
 
 class Categorias(Base):
     __tablename__ = "categorias"    
-    id = Column(Integer, prymary_key=True)
+    id = Column(Integer, primary_key=True)
     categoria = Column(String(300), unique=True, nullable=False)
 
     def __init__(self, categoria):
-        self.categoria = categoria
+        self.categoria=categoria
     
     
