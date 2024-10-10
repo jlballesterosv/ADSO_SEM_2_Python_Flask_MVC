@@ -3,7 +3,7 @@ from src.models import session, Base
 
 class Categorias(Base):
     __tablename__ = "categorias"    
-    id = Column(Integer, prymary_key=True)
+    id = Column(Integer, primary_key=True)
     categoria = Column(String(300), unique=True, nullable=False)
 
     def __init__(self, categoria):
