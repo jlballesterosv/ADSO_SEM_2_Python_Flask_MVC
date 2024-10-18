@@ -18,7 +18,7 @@ def index():
     return render_template('index.html', titulo_pagina = 'Inicio')
 
 @app.route('/crear_producto', methods=['POST','GET'])
-def crear_producto():
+def crear_producto():    
     if request.method == 'POST':
         descripcion = request.form.get('descripcion')    
         valor_unitario = request.form.get('valor_unitario')    
@@ -28,7 +28,8 @@ def crear_producto():
         producto = Productos(descripcion,valor_unitario,unidad_medida,cantida_stock,categoria)
         Productos.agregar_producto(producto)
         return redirect(url_for('ver_productos'))
-    return render_template('formulario_crear_producto.html', titulo_pagina = 'Crear Producto')
+    categorias = Categorias.obtener_categorias()
+    return render_template('formulario_crear_producto.html', titulo_pagina = 'Crear Producto', categorias=categorias)
 
 @app.route('/ver_productos')
 def ver_productos():

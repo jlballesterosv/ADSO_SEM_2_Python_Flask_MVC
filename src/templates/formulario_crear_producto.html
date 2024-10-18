@@ -19,7 +19,6 @@
         <option selected>Seleccione...</option>
         <option value="GRS">GRS</option>
         <option value="UND">UND</option>
-      <option>...</option>
     </select>
   </div>
   
@@ -31,9 +30,9 @@
       <label for="categoria">Categoria</label>
       <select id="categoria" name="categoria" class="form-control">
           <option selected>Seleccione...</option>
-          <option value="1">Alimentos</option>
-          <option value="2">Calzado</option>
-        <option>...</option>
+          {% for categoria in categorias %}
+            <option value={{categoria.id}}>{{categoria.categoria}}</option>
+          {% endfor %}    
       </select>
     </div>
     
