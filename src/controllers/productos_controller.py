@@ -4,12 +4,11 @@ from flask_controller import FlaskController
 from src.models.productos import Productos
 from src.models.categorias import Categorias
 
-
 class ProductosController(FlaskController):
     @app.route('/crear_producto', methods=['POST','GET'])
     def crear_producto():    
         if request.method == 'POST':
-            descripcion = request.form.get('descripcion')    
+            descripcion = request.form.get('descripcion')                
             valor_unitario = request.form.get('valor_unitario')    
             unidad_medida = request.form.get('unidad_medida')    
             cantida_stock = request.form.get('cantida_stock')    
