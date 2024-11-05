@@ -31,5 +31,6 @@ class Clientes(Base, SerializerMixin):
         return cliente.to_dict()
     
     def obtener_cliente_por_numero_identificacion(numero_identificacion):
-        cliente = session.query(Clientes).get(numero_identificacion)
+        cliente = session.query(Clientes).filter(Clientes.numero_identificacion == numero_identificacion).first()
+        print(cliente)
         return cliente.to_dict()

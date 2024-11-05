@@ -21,6 +21,6 @@ class Usuarios(Base):
         self.telefono = telefono
         self.email = email
     
-    def obtener_clientes():
-        clientes = session.query(Clientes).all()
+    def obtener_usuarios():
+        clientes = session.query(Usuarios).all()
         return clientes 

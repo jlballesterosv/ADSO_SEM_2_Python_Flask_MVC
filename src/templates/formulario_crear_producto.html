@@ -11,7 +11,6 @@
       <label for="valor_unitario">Valor Unitario</label>
       <input type="text" class="form-control" id="valor_unitario" name="valor_unitario" placeholder="Valor Unitario">
     </div>
-
   </div>
   <div class="form-group col-md-4">
     <label for="unidad_medida">Unidad de Medida</label>
@@ -20,8 +19,7 @@
         <option value="GRS">GRS</option>
         <option value="UND">UND</option>
     </select>
-  </div>
-  
+  </div>  
   <div class="form-group col-md-6">
     <label for="cantida_stock">Cantidad Stock</label>
     <input type="text" class="form-control" id="cantida_stock" name="cantida_stock" placeholder="Cantidad en Stock">
@@ -34,8 +32,7 @@
             <option value={{categoria.id}}>{{categoria.categoria}}</option>
           {% endfor %}    
       </select>
-    </div>
-    
+    </div>    
   <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
 
