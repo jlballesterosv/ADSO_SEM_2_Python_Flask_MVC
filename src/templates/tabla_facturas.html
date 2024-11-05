@@ -14,11 +14,11 @@
   <tbody>
       {% for factura in facturas %}
         <tr>
-          <th scope="row">{{factura.id}}</th>
-          <td>{{factura.numero_factura}}</td>
-          <td>{{factura.fecha_factura}}</td>
-          <td>{{factura.id_cliente}}</td>
-          <td>{{factura.id_usuario}}</td>
+          <th scope="row">{{factura.Facturas.id}}</th>
+          <td>{{factura.Facturas.numero_factura}}</td>
+          <td>{{factura.Facturas.fecha_factura}}</td>
+          <td>{{factura.Clientes.nombre_completo}}</td>
+          <td>{{factura.Usuarios.nombre_completo}}</td>
         </tr>
       {% endfor %}    
   </tbody>

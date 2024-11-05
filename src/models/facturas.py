@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from src.models import session, Base
 from src.models.clientes import Clientes
+from src.models.usuarios import Usuarios
 
 class Facturas(Base):
     __tablename__ = "facturas"    
@@ -18,7 +19,9 @@ class Facturas(Base):
 
     
     def obtener_facturas():
-        facturas = session.query(Facturas).all()
+        facturas = (session.query(Facturas, Clientes, Usuarios)
+                           .join(Clientes, Facturas.id_cliente == Clientes.id)
+                           .join(Usuarios, Facturas.id_usuario == Usuarios.id)).all()
         return facturas 
     
     def agregar_factura(factura):

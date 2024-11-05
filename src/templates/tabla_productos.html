@@ -15,15 +15,20 @@
   <tbody>
       {% for producto in productos %}
         <tr>
-          <th scope="row">{{producto.id}}</th>
-          <td>{{producto.descripcion}}</td>
-          <td>{{producto.valor_unitario}}</td>
-          <td>{{producto.unidad_medida}}</td>
-          <td>{{producto.cantida_stock}}</td>
-          <td>{{producto.categoria}}</td>
+          <th scope="row">{{producto.Productos.id}}</th>
+          <td>{{producto.Productos.descripcion}}</td>
+          <td>{{producto.Productos.valor_unitario}}</td>
+          <td>{{producto.Productos.unidad_medida}}</td>
+          <td>{{producto.Productos.cantida_stock}}</td>
+          <td>{{producto.Categorias.categoria}}</td>
         </tr>
       {% endfor %}    
   </tbody>
 </table>
+<script>
+  $(document).ready(function () {
+    console.log()
+  });
+</script>
 {% endblock contenido %}    
      
