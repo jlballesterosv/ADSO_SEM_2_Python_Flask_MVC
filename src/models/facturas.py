@@ -16,7 +16,6 @@ class Facturas(Base):
         self.fecha_factura = fecha_factura
         self.id_cliente = id_cliente
         self.id_usuario = id_usuario
-
     
     def obtener_facturas():
         facturas = (session.query(Facturas, Clientes, Usuarios)
