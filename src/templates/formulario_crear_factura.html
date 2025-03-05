@@ -63,6 +63,9 @@
         success: function(result) {
           console.log("Result:");
           console.log(result);
+          
+          console.log("Nombre Cliente:");
+          console.log(result.nombre_completo);
           $('#nombre_completo').val(result.nombre_completo);
           $('#direccion').val(result.direccion);
           $('#telefono').val(result.telefono);
