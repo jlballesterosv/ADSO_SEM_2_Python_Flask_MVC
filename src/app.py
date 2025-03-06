@@ -3,9 +3,13 @@ from src.models import Base, engine
 from flask_controller import FlaskControllerRegister
 from flask_login import LoginManager
 from src.models.usuarios import Usuarios
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 app.secret_key = "mi llaveria"
 app.debug = True
