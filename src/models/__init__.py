@@ -1,9 +1,9 @@
 from flask_sqlalchemy import SQLAlchemy
-import psycopg2
+import pymysql
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 
-engine = create_engine("postgresql+psycopg2://postgres:123456@localhost:5432/factura_sem_2_123")
+engine = create_engine("mysql+pymysql://root@localhost/factura003?charset=utf8mb4")
 
 connection = engine.connect()
 

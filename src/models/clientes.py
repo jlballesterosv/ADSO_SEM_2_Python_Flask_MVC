@@ -1,8 +1,7 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy_serializer import SerializerMixin
 from src.models import session, Base
 
-class Clientes(Base, SerializerMixin):
+class Clientes(Base):
     __tablename__ = "clientes"    
     id = Column(Integer, primary_key=True)
     numero_identificacion = Column(String(30), unique=True, nullable=False)
@@ -28,9 +27,9 @@ class Clientes(Base, SerializerMixin):
     
     def obtener_cliente_por_id(id):
         cliente = session.query(Clientes).get(id)
-        return cliente.to_dict()
+        return cliente
     
     def obtener_cliente_por_numero_identificacion(numero_identificacion):
         cliente = session.query(Clientes).filter(Clientes.numero_identificacion == numero_identificacion).first()
         print(cliente)
-        return cliente.to_dict()
+        return cliente
